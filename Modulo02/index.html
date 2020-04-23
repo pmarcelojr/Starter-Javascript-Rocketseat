@@ -13,8 +13,9 @@
     <div style="display: flex;">
         <ul></ul>
     </div>
+    <input type="text" name="nome" id="nome">
+    <button onclick="adicionar()">Adicionar</button>
     
-
     <script>
         let btn = document.querySelector('button')
         btn.addEventListener('click', criarQuadrado)
@@ -68,6 +69,14 @@
         for (name of names) {
             // chamando funcao que insere o nome
             adicionaItem(name)
+        }
+
+        // adicionando item na lista atraves do botao
+        var inputNewName = document.getElementById('nome')
+        function adicionar() {
+            adicionaItem(inputNewName.value)
+
+            inputNewName.value = ""
         }
     </script>
 </body>
