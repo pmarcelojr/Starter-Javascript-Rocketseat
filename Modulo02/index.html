@@ -10,6 +10,10 @@
 
     <div class="boxes"></div>
     
+    <div style="display: flex;">
+        <ul></ul>
+    </div>
+    
 
     <script>
         let btn = document.querySelector('button')
@@ -31,6 +35,7 @@
             }
         }
 
+        // Gera cores
         function getRadomColor() {
             var letters = "0123456789ABCDEF";
             var color = "#";
@@ -39,8 +44,31 @@
             }
             return color;
         }
-
         var newColor = getRadomColor();
+
+        var names = [
+            "diego", "Gabriel", "Marcelo"
+        ]
+
+        function adicionaItem(name) {
+            console.log('TCL: adicionaItem -> name', name)
+            // pegando elemento li filho de ul
+            var elementFilho = document.createElement('li')
+            // criando o texto para inserir no li
+            var textoDoFilho = document.createTextNode(name)
+            // inserindo texto ao elemento li
+            elementFilho.appendChild(textoDoFilho)
+            // inserindo o li ao elemento ul
+            listElement.appendChild(elementFilho)
+        }
+
+        var listElement = document.querySelector('ul')
+        
+        // percorre nome da lista
+        for (name of names) {
+            // chamando funcao que insere o nome
+            adicionaItem(name)
+        }
     </script>
 </body>
 </html>
