@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Add Box</button>
+
+    <div class="boxes"></div>
+    
+
+    <script>
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', criarQuadrado)
+
+        function criarQuadrado() {
+            let boxElement = document.createElement('div')
+
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.backgroundColor = '#F00';
+            boxElement.style.margin = '5px';
+            boxElement.style.float = 'left';
+
+            document.querySelector('.boxes').appendChild(boxElement)
+        }
+    </script>
+</body>
+</html>
